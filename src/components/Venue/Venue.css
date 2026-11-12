@@ -1,0 +1,358 @@
+/**
+ * ROYAL HERITAGE — VENUE & LOCATION SECTION
+ * Modern Indian Luxury Wedding Aesthetic
+ * 
+ * Editorial two-column showcase with interactive Google Maps integration.
+ */
+
+.venue {
+  position: relative;
+  width: 100%;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  padding: clamp(4.5rem, 8vw, 7.5rem) 0;
+  overflow: hidden;
+}
+
+.venue-section-header {
+  margin-bottom: clamp(var(--space-8), 5vw, var(--space-12));
+}
+
+/* =============================================================
+   1. EDITORIAL TWO-COLUMN GRID
+   ============================================================= */
+
+.venue-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  align-items: start;
+}
+
+@media (min-width: 960px) {
+  .venue-grid {
+    grid-template-columns: 1.05fr 1fr;
+    gap: clamp(var(--space-8), 4.5vw, var(--space-12));
+    align-items: start;
+  }
+}
+
+/* =============================================================
+   2. PALACE PHOTOGRAPH (COLUMN 1 / TOP ON MOBILE)
+   ============================================================= */
+
+.venue-image-column {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.venue-image-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: var(--radius-xs);
+  box-shadow: var(--shadow-card);
+  background-color: var(--color-sand-light);
+  overflow: visible;
+}
+
+/* Antique Gold Hairline Offset Accent */
+.venue-image-accent {
+  position: absolute;
+  inset: -8px -8px 8px 8px;
+  border: 1px solid var(--border-medium);
+  pointer-events: none;
+  z-index: var(--z-deep);
+  border-radius: var(--radius-xs);
+  transition: inset var(--transition-normal), border-color var(--transition-normal);
+}
+
+.venue-image-frame:hover .venue-image-accent {
+  inset: -12px -12px 12px 12px;
+  border-color: var(--color-gold);
+}
+
+.venue-picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.venue-palace-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--border-subtle);
+  opacity: 0;
+  transition: opacity var(--motion-duration-slow) var(--motion-ease-out), transform var(--transition-slow);
+}
+
+.venue-image-loaded .venue-palace-img {
+  opacity: 1;
+}
+
+.venue-image-frame:hover .venue-palace-img {
+  transform: scale(1.015);
+}
+
+.venue-image-caption {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+  font-family: var(--font-sans-body);
+  font-size: var(--text-caption);
+  font-weight: var(--fw-regular);
+  letter-spacing: var(--tracking-wide);
+  color: var(--text-muted);
+}
+
+.venue-caption-icon {
+  font-size: 0.6rem;
+  color: var(--color-gold);
+}
+
+/* =============================================================
+   3. VENUE INFORMATION (COLUMN 2 / BELOW ON MOBILE)
+   ============================================================= */
+
+.venue-info-column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.venue-info-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.venue-name {
+  font-family: var(--font-serif-heading);
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: var(--fw-regular);
+  color: var(--color-maroon);
+  line-height: var(--lh-tight);
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+/* Fine Ornamental Gold Line */
+.venue-ornament {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  max-width: 180px;
+  color: var(--color-gold);
+  margin-top: var(--space-1);
+}
+
+.venue-ornament-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, var(--color-gold-border), var(--color-gold));
+}
+
+.venue-ornament-line:last-child {
+  background: linear-gradient(to left, var(--color-gold-border), var(--color-gold));
+}
+
+.venue-ornament-diamond {
+  font-size: 0.55rem;
+  line-height: 1;
+  color: var(--color-gold);
+}
+
+/* Structured Metadata List */
+.venue-meta-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+  margin: 0;
+  padding: var(--space-4) 0;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+@media (min-width: 600px) {
+  .venue-meta-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .venue-meta-item:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+.venue-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.venue-meta-label {
+  font-family: var(--font-sans-body);
+  font-size: 0.72rem;
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-gold-dark);
+}
+
+.venue-meta-value {
+  font-family: var(--font-sans-body);
+  font-size: 0.9375rem;
+  font-weight: var(--fw-regular);
+  color: var(--text-primary);
+  margin: 0;
+  line-height: var(--lh-snug);
+}
+
+.venue-address {
+  font-style: normal;
+  color: var(--color-maroon);
+  font-weight: var(--fw-medium);
+}
+
+/* Editorial Description */
+.venue-description {
+  font-family: var(--font-sans-body);
+  font-size: clamp(0.9375rem, 0.2vw + 0.9rem, 1.05rem);
+  font-weight: var(--fw-light);
+  line-height: var(--lh-relaxed);
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Demo Disclosure Note */
+.venue-note {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  font-family: var(--font-sans-body);
+  font-size: var(--text-caption);
+  color: var(--text-muted);
+  font-style: italic;
+  margin: 0;
+  line-height: var(--lh-snug);
+}
+
+.venue-note-icon {
+  font-style: normal;
+  font-size: 0.85rem;
+  color: var(--color-gold-dark);
+  line-height: 1.1;
+  flex-shrink: 0;
+}
+
+/* =============================================================
+   4. GOOGLE MAPS INTEGRATION
+   ============================================================= */
+
+.venue-map-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}
+
+.venue-map-title {
+  font-family: var(--font-sans-body);
+  font-size: 0.75rem;
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-gold-dark);
+  margin: 0;
+}
+
+.venue-map-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  min-height: 220px;
+  max-height: 320px;
+  border-radius: var(--radius-xs);
+  overflow: hidden;
+  border: 1px solid var(--border-medium);
+  box-shadow: var(--shadow-subtle);
+  background-color: var(--color-sand-light);
+}
+
+.venue-map-iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Map Action Buttons */
+.venue-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+.venue-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  text-decoration: none;
+  font-size: var(--text-caption);
+  padding: 0.625rem 1.25rem;
+}
+
+.venue-action-icon {
+  font-size: 0.85rem;
+  line-height: 1;
+}
+
+/* =============================================================
+   5. MOBILE RESPONSIVENESS
+   ============================================================= */
+
+@media (max-width: 959px) {
+  .venue-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .venue-image-frame {
+    max-width: 100%;
+  }
+
+  .venue-image-accent {
+    inset: -6px -6px 6px 6px;
+  }
+
+  .venue-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .venue-action-btn {
+    justify-content: center;
+    width: 100%;
+    min-height: 44px; /* Accessible touch target */
+  }
+}
+
+/* =============================================================
+   6. REDUCED MOTION PREFERENCES
+   ============================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .venue-palace-img,
+  .venue-image-accent,
+  .btn {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+

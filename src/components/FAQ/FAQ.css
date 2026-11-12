@@ -1,0 +1,362 @@
+/**
+ * ROYAL HERITAGE — GUEST INFORMATION & FAQ SECTION
+ * Modern Indian Luxury Wedding Aesthetic
+ * 
+ * Two-column editorial composition on desktop, stacked on mobile.
+ * Clean, accessible expandable accordion with Royal Maroon and Antique Gold accents.
+ */
+
+.faq {
+  position: relative;
+  width: 100%;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  padding: clamp(4.5rem, 8vw, 7.5rem) 0;
+  overflow: hidden;
+}
+
+/* =============================================================
+   1. EDITORIAL TWO-COLUMN GRID
+   ============================================================= */
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  align-items: start;
+}
+
+@media (min-width: 960px) {
+  .faq-grid {
+    grid-template-columns: minmax(320px, 390px) 1fr;
+    gap: clamp(var(--space-8), 5vw, var(--space-16));
+  }
+
+  .faq-intro-column {
+    position: sticky;
+    top: var(--space-10);
+  }
+}
+
+/* =============================================================
+   2. SECTION INTRODUCTION (LEFT COLUMN)
+   ============================================================= */
+
+.faq-intro-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.faq-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.faq-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-sans-body);
+  font-size: var(--text-kicker);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-gold-dark);
+  margin-bottom: var(--space-2);
+}
+
+.faq-eyebrow-diamond {
+  font-size: 0.55rem;
+  color: var(--color-gold);
+}
+
+.faq-heading {
+  font-family: var(--font-serif-heading);
+  font-size: clamp(2.25rem, 3.8vw, 3.25rem);
+  font-weight: var(--fw-regular);
+  color: var(--color-maroon);
+  line-height: var(--lh-tight);
+  margin: 0 0 var(--space-3) 0;
+  letter-spacing: 0.01em;
+}
+
+.faq-divider {
+  margin: var(--space-2) 0 var(--space-5);
+  max-width: 180px;
+  margin-left: 0;
+  justify-content: flex-start;
+}
+
+.faq-divider::before {
+  flex: 0 0 24px;
+}
+
+.faq-subtitle {
+  font-family: var(--font-sans-body);
+  font-size: clamp(0.95rem, 0.25vw + 0.9rem, 1.0625rem);
+  font-weight: var(--fw-light);
+  line-height: var(--lh-relaxed);
+  color: var(--text-secondary);
+  margin: 0 0 var(--space-6) 0;
+}
+
+/* Hospitality Note Card */
+.faq-note-card {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  background-color: var(--color-sand-light);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xs);
+  padding: var(--space-4) var(--space-5);
+  margin-top: var(--space-2);
+}
+
+.faq-note-icon {
+  color: var(--color-gold);
+  font-size: 0.85rem;
+  line-height: 1.4;
+  flex-shrink: 0;
+}
+
+.faq-note-text {
+  font-family: var(--font-sans-body);
+  font-size: 0.8125rem;
+  font-weight: var(--fw-regular);
+  color: var(--text-muted);
+  line-height: var(--lh-normal);
+  margin: 0;
+}
+
+/* =============================================================
+   3. ACCORDION (RIGHT COLUMN)
+   ============================================================= */
+
+.faq-accordion-column {
+  width: 100%;
+}
+
+.faq-accordion {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--border-subtle);
+  transition: background-color var(--transition-fast);
+}
+
+.faq-item-open {
+  background-color: rgba(242, 233, 219, 0.25);
+}
+
+/* Question Trigger Button */
+.faq-question-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--space-5) var(--space-2);
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  min-height: 52px;
+  gap: var(--space-4);
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.faq-question-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--color-gold-glow);
+  border-radius: var(--radius-xs);
+}
+
+.faq-question-number {
+  font-family: var(--font-serif-heading);
+  font-size: 1.05rem;
+  font-weight: var(--fw-medium);
+  color: var(--color-gold-dark);
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+  width: 28px;
+}
+
+.faq-question-text {
+  flex: 1;
+  font-family: var(--font-serif-heading);
+  font-size: clamp(1.125rem, 1.4vw, 1.35rem);
+  font-weight: var(--fw-medium);
+  color: var(--color-maroon);
+  line-height: var(--lh-snug);
+  letter-spacing: 0.01em;
+  transition: color var(--transition-fast);
+}
+
+.faq-question-btn:hover .faq-question-text {
+  color: var(--color-gold-dark);
+}
+
+/* Expand / Collapse Circular Indicator */
+.faq-indicator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid var(--border-medium);
+  background-color: var(--color-ivory-light);
+  color: var(--color-gold-dark);
+  flex-shrink: 0;
+  transition: 
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.faq-indicator-icon {
+  font-size: 1.15rem;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.faq-question-btn:hover .faq-indicator {
+  border-color: var(--color-gold);
+  background-color: var(--color-sand-light);
+}
+
+.faq-item-open .faq-indicator {
+  background-color: var(--color-maroon);
+  border-color: var(--color-gold);
+  color: var(--color-ivory-light);
+}
+
+/* =============================================================
+   4. ANSWER CONTENT
+   ============================================================= */
+
+.faq-answer-wrapper {
+  overflow: hidden;
+}
+
+.faq-answer-content {
+  padding: 0 var(--space-2) var(--space-6) calc(28px + var(--space-4));
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.faq-answer-paragraph {
+  font-family: var(--font-sans-body);
+  font-size: clamp(0.9375rem, 0.2vw + 0.9rem, 1rem);
+  font-weight: var(--fw-light);
+  line-height: var(--lh-relaxed);
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Bullet Points (Schedule & Dress Code) */
+.faq-bullet-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-1) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.faq-bullet-item {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  font-family: var(--font-sans-body);
+  font-size: 0.9375rem;
+  font-weight: var(--fw-regular);
+  color: var(--text-primary);
+  line-height: var(--lh-normal);
+}
+
+.faq-bullet-marker {
+  font-size: 0.55rem;
+  color: var(--color-gold-dark);
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+/* Clarification Note */
+.faq-clarification-note {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-sans-body);
+  font-size: 0.8125rem;
+  font-style: italic;
+  color: var(--text-muted);
+  margin: var(--space-1) 0 0 0;
+  line-height: var(--lh-snug);
+}
+
+.faq-clarification-icon {
+  font-style: normal;
+  font-size: 0.85rem;
+  color: var(--color-gold-dark);
+}
+
+/* =============================================================
+   5. MOBILE RESPONSIVENESS
+   ============================================================= */
+
+@media (max-width: 959px) {
+  .faq-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .faq-intro-column {
+    position: static;
+  }
+
+  .faq-header {
+    text-align: left;
+  }
+
+  .faq-divider {
+    margin: var(--space-2) 0 var(--space-4);
+  }
+
+  .faq-question-btn {
+    padding: var(--space-4) 0;
+    gap: var(--space-3);
+  }
+
+  .faq-question-number {
+    width: 24px;
+    font-size: 0.95rem;
+  }
+
+  .faq-question-text {
+    font-size: 1.125rem;
+  }
+
+  .faq-answer-content {
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: var(--space-5);
+  }
+}
+
+/* =============================================================
+   6. REDUCED MOTION PREFERENCES
+   ============================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .faq-indicator,
+  .faq-item,
+  .faq-question-text {
+    transition: none !important;
+  }
+}
+

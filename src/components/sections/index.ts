@@ -1,0 +1,10 @@
+export * from './Hero';
+export * from './Welcome';
+export * from './OurStory';
+export * from './Countdown';
+export { Events } from '../Events';
+export { Gallery } from '../Gallery';
+export { Venue } from '../Venue';
+export { RSVP } from '../RSVP';
+export { FAQ } from '../FAQ';
+export { Footer } from '../Footer';

@@ -1,0 +1,213 @@
+/**
+ * ROYAL HERITAGE — WELCOME SECTION STYLES
+ * Warm Antique Ivory Editorial Invitation Layout
+ */
+
+.welcome {
+  position: relative;
+  width: 100%;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  padding: clamp(5rem, 9vw, 8.5rem) 0;
+  overflow: hidden;
+}
+
+/* Centred Editorial Composition (No Generic Bordered Card) */
+.welcome-content {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* =============================================================
+   0. PERSONALISED GUEST HERALD (URL Parameter Enabled)
+   ============================================================= */
+
+.welcome-guest-herald {
+  background-color: var(--color-ivory-light);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-xs);
+  padding: clamp(var(--space-6), 4vw, var(--space-8)) clamp(var(--space-5), 4vw, var(--space-10));
+  margin-bottom: clamp(var(--space-8), 5vw, var(--space-12));
+  box-shadow: 0 4px 20px rgba(181, 150, 91, 0.12);
+  position: relative;
+  animation: fadeInHerald var(--transition-normal);
+}
+
+@keyframes fadeInHerald {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.welcome-guest-crest {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-gold);
+  margin-bottom: var(--space-2);
+}
+
+.welcome-guest-diamond {
+  font-size: 0.55rem;
+}
+
+.welcome-guest-motif {
+  font-size: 0.85rem;
+}
+
+.welcome-guest-kicker {
+  font-family: var(--font-sans-body);
+  font-size: var(--text-kicker);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-gold-dark);
+  margin: 0 0 var(--space-2) 0;
+}
+
+.welcome-guest-name {
+  font-family: var(--font-serif-heading);
+  font-size: clamp(2rem, 3.8vw, 2.75rem);
+  font-weight: var(--fw-medium);
+  color: var(--color-maroon);
+  letter-spacing: 0.02em;
+  margin: 0 0 var(--space-2) 0;
+  line-height: var(--lh-tight);
+}
+
+.welcome-guest-note,
+.welcome-guest-greeting {
+  font-family: var(--font-serif-display);
+  font-style: italic;
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  color: var(--color-charcoal-muted);
+  line-height: var(--lh-normal);
+  margin: 0 auto;
+  max-width: 520px;
+}
+
+.welcome-guest-divider-wrap {
+  margin-top: var(--space-4);
+}
+
+.welcome-guest-divider {
+  margin: 0 auto;
+  max-width: 140px;
+}
+
+/* Eyebrow Label */
+.welcome-eyebrow {
+  font-family: var(--font-sans-body);
+  font-size: var(--text-kicker);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-gold-dark);
+  margin-bottom: var(--space-3);
+  display: inline-block;
+}
+
+/* Main Editorial Heading — Cormorant Garamond */
+.welcome-heading {
+  font-family: var(--font-serif-heading);
+  font-size: clamp(2.25rem, 4.2vw + 0.5rem, 3.75rem);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-tight);
+  color: var(--color-maroon);
+  letter-spacing: 0.01em;
+  margin: 0 0 var(--space-4) 0;
+}
+
+/* Ornamental Antique Gold Divider */
+.welcome-divider {
+  margin: var(--space-5) auto var(--space-6);
+  max-width: 220px;
+}
+
+/* Supporting Heading with Playfair Display Italic Emphasis */
+.welcome-subheading {
+  font-family: var(--font-serif-display);
+  font-style: italic;
+  font-size: clamp(1.2rem, 1.8vw + 0.4rem, 1.65rem);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-snug);
+  color: var(--color-maroon-light);
+  margin: 0 auto var(--space-6);
+  max-width: 580px;
+}
+
+/* Invitation Message Body — Clean, Readable Editorial Prose */
+.welcome-body-wrapper {
+  margin: 0 auto var(--space-8);
+  max-width: 620px;
+}
+
+.welcome-message {
+  font-family: var(--font-sans-body);
+  font-size: clamp(1.0625rem, 0.4vw + 0.95rem, 1.25rem);
+  font-weight: var(--fw-light);
+  line-height: var(--lh-relaxed);
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* Closing Signature */
+.welcome-signature {
+  font-family: var(--font-sans-body);
+  font-size: var(--text-caption);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-gold-dark);
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.welcome-signature::before,
+.welcome-signature::after {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background-color: var(--color-gold-border);
+  vertical-align: middle;
+}
+
+/* =============================================================
+   MOBILE-FIRST RESPONSIVE REFINEMENTS
+   ============================================================= */
+
+@media (max-width: 768px) {
+  .welcome {
+    padding: clamp(3.5rem, 7vw, 5rem) 0;
+  }
+
+  .welcome-heading {
+    font-size: clamp(1.85rem, 6.5vw, 2.5rem);
+  }
+
+  .welcome-subheading {
+    font-size: clamp(1.05rem, 3.5vw, 1.3rem);
+    margin-bottom: var(--space-5);
+  }
+
+  .welcome-message {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .welcome-signature::before,
+  .welcome-signature::after {
+    width: 16px;
+  }
+}
+

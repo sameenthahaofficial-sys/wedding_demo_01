@@ -1,0 +1,127 @@
+@import './reset.css';
+@import './tokens.css';
+@import './components.css';
+
+/* =============================================================
+   GLOBAL DOCUMENT STYLES
+   ============================================================= */
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: var(--font-sans-body);
+  font-size: var(--text-body);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-normal);
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  text-rendering: optimizeLegibility;
+}
+
+/* Text Selection: Royal Gold Tint */
+::selection {
+  background-color: var(--color-gold-tint);
+  color: var(--color-maroon-dark);
+}
+
+/* Heading Defaults */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif-heading);
+  font-weight: var(--fw-medium);
+  line-height: var(--lh-tight);
+  color: var(--color-maroon);
+  letter-spacing: var(--tracking-tight);
+}
+
+h1 {
+  font-size: var(--text-h1);
+}
+
+h2 {
+  font-size: var(--text-h2);
+}
+
+h3 {
+  font-size: var(--text-h3);
+}
+
+h4 {
+  font-size: var(--text-h4);
+}
+
+p {
+  color: var(--text-secondary);
+  line-height: var(--lh-normal);
+  margin-bottom: var(--space-4);
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+/* Secondary Display Typography Utility */
+.font-display {
+  font-family: var(--font-serif-display);
+}
+
+.font-heading {
+  font-family: var(--font-serif-heading);
+}
+
+.font-sans {
+  font-family: var(--font-sans-body);
+}
+
+/* Accent Text Utilities */
+.text-gold {
+  color: var(--color-gold-dark);
+}
+
+.text-maroon {
+  color: var(--color-maroon);
+}
+
+.text-rose {
+  color: var(--color-rose-dark);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+/* =============================================================
+   ACCESSIBILITY
+   ============================================================= */
+
+/* High-Visibility Focus Ring */
+:focus-visible {
+  outline: 2px solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* Screen reader only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Respect User Reduced Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

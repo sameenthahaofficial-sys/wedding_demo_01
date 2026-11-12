@@ -1,0 +1,216 @@
+/**
+ * ROYAL HERITAGE — COUNTDOWN SECTION STYLES
+ * Royal Maroon & Antique Gold Editorial Layout
+ */
+
+.countdown {
+  position: relative;
+  width: 100%;
+  background: linear-gradient(180deg, #581827 0%, var(--color-maroon) 50%, #4c1421 100%);
+  color: var(--color-ivory);
+  padding: clamp(5rem, 8vw, 8rem) 0;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Subtle Royal Vignette Framing */
+.countdown::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 50%,
+    transparent 40%,
+    rgba(24, 16, 18, 0.4) 100%
+  );
+  pointer-events: none;
+}
+
+.countdown-content {
+  position: relative;
+  z-index: var(--z-surface);
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* Header Lockup */
+.countdown-header {
+  margin-bottom: var(--space-8);
+}
+
+.countdown-eyebrow {
+  font-family: var(--font-sans-body);
+  font-size: var(--text-kicker);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-gold-light);
+  margin-bottom: var(--space-3);
+  display: inline-block;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.countdown-heading {
+  font-family: var(--font-serif-heading);
+  font-size: clamp(2.25rem, 4.5vw, 3.75rem);
+  font-weight: var(--fw-regular);
+  color: var(--color-ivory-light);
+  line-height: var(--lh-tight);
+  letter-spacing: 0.01em;
+  margin: 0 0 var(--space-2) 0;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.countdown-divider {
+  margin: var(--space-4) auto var(--space-6);
+  max-width: 220px;
+}
+
+/* =============================================================
+   COUNTDOWN UNITS DISPLAY (NO GENERIC BOXED CARDS)
+   ============================================================= */
+
+.countdown-timer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(var(--space-2), 3vw, var(--space-8));
+  margin: 0 auto;
+  max-width: 720px;
+}
+
+.countdown-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  min-width: 0;
+  padding: var(--space-2) 0;
+}
+
+.countdown-number {
+  font-family: var(--font-serif-heading);
+  font-size: clamp(2.75rem, 6vw, 4.75rem);
+  font-weight: var(--fw-medium);
+  line-height: 1;
+  color: var(--color-gold-light);
+  letter-spacing: 0.02em;
+  margin-bottom: var(--space-2);
+  text-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.5),
+    0 0 24px rgba(181, 150, 91, 0.3);
+  font-variant-numeric: tabular-nums;
+}
+
+.countdown-label {
+  font-family: var(--font-sans-body);
+  font-size: clamp(0.6875rem, 0.25vw + 0.65rem, 0.8125rem);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-sand-light);
+  line-height: 1;
+}
+
+/* Elegant Hairline Separator Between Units */
+.countdown-separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: clamp(2.75rem, 6vw, 4.75rem);
+  color: var(--color-gold);
+  opacity: 0.4;
+  font-family: var(--font-serif-heading);
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  user-select: none;
+  margin-top: -16px;
+}
+
+/* Wedding Date Display Beneath Units */
+.countdown-date {
+  font-family: var(--font-sans-body);
+  font-size: var(--text-caption);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-top: var(--space-6);
+  margin-bottom: 0;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* =============================================================
+   CELEBRATION STARTED STATE
+   ============================================================= */
+
+.countdown-completed {
+  padding: var(--space-6) var(--space-4);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.countdown-completed-title {
+  font-family: var(--font-serif-heading);
+  font-size: clamp(1.85rem, 3.5vw, 2.75rem);
+  color: var(--color-gold-light);
+  margin-bottom: var(--space-3);
+  font-weight: var(--fw-regular);
+}
+
+.countdown-completed-text {
+  font-family: var(--font-sans-body);
+  font-size: var(--text-body-lead);
+  font-weight: var(--fw-light);
+  color: var(--color-ivory);
+  line-height: var(--lh-normal);
+  margin: 0;
+}
+
+/* =============================================================
+   MOBILE-FIRST RESPONSIVE ADJUSTMENTS
+   ============================================================= */
+
+@media (max-width: 640px) {
+  .countdown {
+    padding: clamp(3.5rem, 7vw, 4.5rem) 0;
+  }
+
+  .countdown-timer {
+    gap: var(--space-1);
+  }
+
+  .countdown-number {
+    font-size: clamp(2.15rem, 9.5vw, 2.85rem);
+    margin-bottom: var(--space-1);
+  }
+
+  .countdown-label {
+    font-size: 0.625rem;
+    letter-spacing: 0.15em;
+  }
+
+  .countdown-separator {
+    height: clamp(2.15rem, 9.5vw, 2.85rem);
+    font-size: 1.25rem;
+    opacity: 0.35;
+    margin-top: -12px;
+  }
+
+  .countdown-date {
+    font-size: 0.75rem;
+    margin-top: var(--space-5);
+    letter-spacing: 0.18em;
+  }
+}
+
+/* =============================================================
+   REDUCED MOTION
+   ============================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .countdown-number {
+    text-shadow: none;
+  }
+}
+

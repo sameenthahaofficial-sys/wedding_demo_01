@@ -1,0 +1,211 @@
+/**
+ * ROYAL HERITAGE — DESIGN SYSTEM TOKENS
+ * Modern Indian Luxury Wedding Aesthetic
+ * 
+ * Strict palette, semantic variables, fluid typography,
+ * consistent spacing, and motion tokens.
+ */
+
+:root {
+  /* -------------------------------------------------------------
+   * 1. BASE COLOR PALETTE
+   * ------------------------------------------------------------- */
+  /* Royal Maroon */
+  --color-maroon: #641F30;
+  --color-maroon-dark: #481421;
+  --color-maroon-light: #7E2C41;
+  --color-maroon-tint: rgba(100, 31, 48, 0.06);
+  --color-maroon-overlay: rgba(100, 31, 48, 0.85);
+
+  /* Antique Ivory */
+  --color-ivory: #F5EFE4;
+  --color-ivory-light: #FAF7F0;
+  --color-ivory-dark: #E7DDCF;
+
+  /* Antique Gold */
+  --color-gold: #B5965B;
+  --color-gold-light: #CDB382;
+  --color-gold-dark: #8C6F36; /* High contrast safe (>= 4.5:1 on ivory) */
+  --color-gold-tint: rgba(181, 150, 91, 0.12);
+  --color-gold-border: rgba(181, 150, 91, 0.35);
+  --color-gold-glow: rgba(181, 150, 91, 0.22);
+
+  /* Deep Charcoal */
+  --color-charcoal: #28201E;
+  --color-charcoal-muted: #574B48; /* WCAG AA compliant on ivory */
+  --color-charcoal-subtle: #7A6E6B;
+
+  /* Dusty Rose */
+  --color-rose: #A87971;
+  --color-rose-light: #C49B94;
+  --color-rose-dark: #8C5E57;
+  --color-rose-tint: rgba(168, 121, 113, 0.10);
+
+  /* Warm Sand */
+  --color-sand: #E7D8C1;
+  --color-sand-light: #F2E9DB;
+  --color-sand-dark: #D4BE9F;
+
+  /* Pure White (surface base) */
+  --color-white: #FFFFFF;
+
+  /* -------------------------------------------------------------
+   * 2. SEMANTIC DESIGN TOKENS
+   * ------------------------------------------------------------- */
+  /* Surfaces & Backgrounds */
+  --bg-primary: var(--color-ivory);
+  --bg-secondary: var(--color-sand-light);
+  --bg-tertiary: var(--color-sand);
+  --bg-dark: var(--color-maroon);
+  --bg-dark-secondary: var(--color-maroon-dark);
+  --bg-card: var(--color-white);
+  --bg-card-subtle: var(--color-ivory-light);
+  --bg-overlay: rgba(40, 32, 30, 0.65);
+
+  /* Text Colors */
+  --text-primary: var(--color-charcoal);
+  --text-secondary: var(--color-charcoal-muted);
+  --text-muted: var(--color-charcoal-subtle);
+  --text-accent: var(--color-gold-dark); /* Contrast-safe for body/kicker */
+  --text-accent-display: var(--color-gold); /* Used on dark surfaces */
+  --text-rose: var(--color-rose-dark);
+  --text-inverse: var(--color-ivory-light);
+  --text-inverse-muted: var(--color-sand);
+
+  /* Border Tokens */
+  --border-subtle: rgba(181, 150, 91, 0.22);
+  --border-medium: rgba(181, 150, 91, 0.45);
+  --border-accent: var(--color-gold);
+  --border-gold-ornate: 1px solid var(--color-gold);
+  --border-divider: rgba(40, 32, 30, 0.08);
+
+  /* Interactive States (Buttons, Links, Inputs) */
+  --interactive-primary-bg: var(--color-maroon);
+  --interactive-primary-hover-bg: var(--color-maroon-light);
+  --interactive-primary-active-bg: var(--color-maroon-dark);
+  --interactive-primary-text: var(--color-ivory-light);
+  --interactive-primary-border: var(--color-gold-dark);
+
+  --interactive-secondary-bg: transparent;
+  --interactive-secondary-hover-bg: var(--color-maroon-tint);
+  --interactive-secondary-text: var(--color-maroon);
+  --interactive-secondary-border: var(--color-maroon);
+
+  --interactive-gold-bg: transparent;
+  --interactive-gold-hover-bg: var(--color-gold-tint);
+  --interactive-gold-text: var(--color-gold-dark);
+  --interactive-gold-border: var(--color-gold);
+
+  --focus-ring-color: var(--color-gold);
+  --focus-ring-offset: 3px;
+
+  /* -------------------------------------------------------------
+   * 3. TYPOGRAPHY SYSTEM
+   * ------------------------------------------------------------- */
+  --font-serif-heading: 'Cormorant Garamond', Garamond, 'Times New Roman', serif;
+  --font-serif-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-sans-body: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Font Weights */
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* Fluid Type Scale (clamp: min, preferred, max) */
+  --text-display: clamp(2.75rem, 5.5vw + 1rem, 5rem);     /* Grand Royal Hero / Couple Name */
+  --text-h1: clamp(2.25rem, 4vw + 0.75rem, 3.75rem);       /* Major Section Headings */
+  --text-h2: clamp(1.75rem, 2.75vw + 0.5rem, 2.75rem);    /* Sub-sections / Event Names */
+  --text-h3: clamp(1.35rem, 1.8vw + 0.4rem, 2rem);        /* Card Titles / Modal Headings */
+  --text-h4: clamp(1.15rem, 1.2vw + 0.25rem, 1.5rem);     /* Subsection Titles */
+  --text-body-lead: clamp(1.0625rem, 0.4vw + 0.95rem, 1.25rem); /* Editorial Intros */
+  --text-body: 1rem;                                       /* 16px Base */
+  --text-body-sm: 0.875rem;                                /* 14px */
+  --text-caption: 0.8125rem;                               /* 13px */
+  --text-kicker: clamp(0.75rem, 0.25vw + 0.7rem, 0.8125rem); /* Tracked Uppercase Section Labels */
+
+  /* Line Heights */
+  --lh-tight: 1.15;
+  --lh-snug: 1.35;
+  --lh-normal: 1.6;
+  --lh-relaxed: 1.8;
+
+  /* Letter Spacing */
+  --tracking-tight: -0.015em;
+  --tracking-normal: 0em;
+  --tracking-wide: 0.05em;
+  --tracking-wider: 0.12em;
+  --tracking-widest: 0.22em;
+
+  /* -------------------------------------------------------------
+   * 4. SPACING & LAYOUT SYSTEM
+   * ------------------------------------------------------------- */
+  /* Fluid Gutter & Section Spacing */
+  --gutter-fluid: clamp(1.25rem, 4vw, 3.5rem);
+  --section-spacing-sm: clamp(2.5rem, 5vw, 4rem);
+  --section-spacing-md: clamp(4rem, 8vw, 6.5rem);
+  --section-spacing-lg: clamp(6rem, 11vw, 9.5rem);
+
+  /* Element Spacing Scale */
+  --space-1: 0.25rem;  /* 4px */
+  --space-2: 0.5rem;   /* 8px */
+  --space-3: 0.75rem;  /* 12px */
+  --space-4: 1rem;     /* 16px */
+  --space-5: 1.25rem;  /* 20px */
+  --space-6: 1.5rem;   /* 24px */
+  --space-8: 2rem;     /* 32px */
+  --space-10: 2.5rem;  /* 40px */
+  --space-12: 3rem;    /* 48px */
+  --space-16: 4rem;    /* 64px */
+  --space-20: 5rem;    /* 80px */
+  --space-24: 6rem;    /* 96px */
+
+  /* Container Max Widths */
+  --container-max-width: 1200px;
+  --container-narrow-width: 820px;
+  --container-wide-width: 1360px;
+
+  /* -------------------------------------------------------------
+   * 5. BORDERS, RADII, & SHADOWS
+   * ------------------------------------------------------------- */
+  /* Radii (Deliberately refined and subtle for luxury aesthetic) */
+  --radius-none: 0px;
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-subtle: 0 2px 10px rgba(40, 32, 30, 0.04);
+  --shadow-card: 0 8px 30px rgba(40, 32, 30, 0.07);
+  --shadow-elevated: 0 16px 44px rgba(40, 32, 30, 0.11);
+  --shadow-gold-glow: 0 0 24px var(--color-gold-glow);
+
+  /* -------------------------------------------------------------
+   * 6. MOTION & TRANSITIONS
+   * ------------------------------------------------------------- */
+  --motion-duration-fast: 160ms;
+  --motion-duration-normal: 280ms;
+  --motion-duration-slow: 450ms;
+  --motion-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  --transition-fast: var(--motion-duration-fast) var(--motion-ease-out);
+  --transition-normal: var(--motion-duration-normal) var(--motion-ease-out);
+  --transition-slow: var(--motion-duration-slow) var(--motion-ease-in-out);
+
+  /* -------------------------------------------------------------
+   * 7. Z-INDEX SCALE
+   * ------------------------------------------------------------- */
+  --z-deep: -1;
+  --z-base: 0;
+  --z-surface: 10;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-header: 300;
+  --z-modal-backdrop: 400;
+  --z-modal: 500;
+  --z-toast: 600;
+}

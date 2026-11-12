@@ -1,0 +1,450 @@
+/**
+ * ROYAL HERITAGE — REUSABLE DESIGN PRIMITIVES
+ * Modern Indian Luxury Wedding Aesthetic
+ * 
+ * Buttons, Links, Dividers, Section Labels, Containers,
+ * Image Frames, Surfaces, and Interactive States.
+ */
+
+/* =============================================================
+   1. BUTTONS
+   ============================================================= */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-family: var(--font-sans-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: 
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    border-color var(--transition-fast),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+  white-space: nowrap;
+  user-select: none;
+  line-height: 1;
+}
+
+.btn:disabled,
+.btn[aria-disabled="true"] {
+  opacity: 0.55;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Button Variants */
+.btn-primary {
+  background-color: var(--interactive-primary-bg);
+  color: var(--interactive-primary-text);
+  border-color: var(--interactive-primary-border);
+  box-shadow: var(--shadow-subtle);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--interactive-primary-hover-bg);
+  color: var(--interactive-primary-text);
+  border-color: var(--color-gold);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card);
+}
+
+.btn-primary:active:not(:disabled) {
+  background-color: var(--interactive-primary-active-bg);
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background-color: var(--interactive-secondary-bg);
+  color: var(--interactive-secondary-text);
+  border-color: var(--interactive-secondary-border);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background-color: var(--color-maroon);
+  color: var(--color-ivory-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-subtle);
+}
+
+.btn-secondary:active:not(:disabled) {
+  background-color: var(--color-maroon-dark);
+  transform: translateY(0);
+}
+
+.btn-gold {
+  background-color: var(--interactive-gold-bg);
+  color: var(--interactive-gold-text);
+  border-color: var(--interactive-gold-border);
+}
+
+.btn-gold:hover:not(:disabled) {
+  background-color: var(--color-gold);
+  color: var(--color-maroon-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-subtle);
+}
+
+.btn-gold:active:not(:disabled) {
+  background-color: var(--color-gold-dark);
+  transform: translateY(0);
+}
+
+/* Button Sizes */
+.btn-sm {
+  padding: 0.5rem 1.125rem;
+  font-size: var(--text-caption);
+}
+
+.btn-md {
+  padding: 0.75rem 1.75rem;
+  font-size: var(--text-body-sm);
+}
+
+.btn-lg {
+  padding: 1rem 2.25rem;
+  font-size: 0.9375rem;
+}
+
+
+/* =============================================================
+   2. TEXT LINKS & EDITORIAL ANCHORS
+   ============================================================= */
+
+.link-editorial {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  color: var(--color-maroon);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--tracking-wide);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+  padding-bottom: 2px;
+}
+
+.link-editorial::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-gold);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--transition-normal);
+}
+
+.link-editorial:hover {
+  color: var(--color-gold-dark);
+}
+
+.link-editorial:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.link-inverse {
+  color: var(--color-ivory);
+}
+
+.link-inverse:hover {
+  color: var(--color-gold-light);
+}
+
+.link-inverse::after {
+  background-color: var(--color-gold-light);
+}
+
+
+/* =============================================================
+   3. DECORATIVE MOTIF DIVIDERS
+   ============================================================= */
+
+.divider-royal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  width: 100%;
+  max-width: 320px;
+  margin: var(--space-4) auto;
+  color: var(--color-gold);
+}
+
+.divider-royal::before,
+.divider-royal::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--color-gold-border) 40%,
+    var(--color-gold)
+  );
+}
+
+.divider-royal::after {
+  background: linear-gradient(
+    to left,
+    transparent,
+    var(--color-gold-border) 40%,
+    var(--color-gold)
+  );
+}
+
+.divider-royal-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  line-height: 1;
+  color: var(--color-gold);
+}
+
+/* Light / Inverse divider for dark maroon sections */
+.divider-royal-inverse {
+  color: var(--color-gold-light);
+}
+
+.divider-royal-inverse::before {
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(205, 179, 130, 0.4) 40%,
+    var(--color-gold-light)
+  );
+}
+
+.divider-royal-inverse::after {
+  background: linear-gradient(
+    to left,
+    transparent,
+    rgba(205, 179, 130, 0.4) 40%,
+    var(--color-gold-light)
+  );
+}
+
+.divider-royal-inverse .divider-royal-icon {
+  color: var(--color-gold-light);
+}
+
+
+/* =============================================================
+   4. SECTION LABELS & EDITORIAL KICKERS
+   ============================================================= */
+
+.section-kicker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-family: var(--font-sans-body);
+  font-size: var(--text-kicker);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--text-accent);
+  margin-bottom: var(--space-2);
+}
+
+.section-kicker-ornate::before,
+.section-kicker-ornate::after {
+  content: '♦';
+  font-size: 0.55rem;
+  color: var(--color-gold);
+  opacity: 0.8;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: var(--space-8);
+  max-width: var(--container-narrow-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-title {
+  font-family: var(--font-serif-heading);
+  font-size: var(--text-h2);
+  font-weight: var(--fw-medium);
+  color: var(--color-maroon);
+  line-height: var(--lh-tight);
+  margin-bottom: var(--space-2);
+}
+
+.section-subtitle {
+  font-family: var(--font-sans-body);
+  font-size: var(--text-body-lead);
+  font-weight: var(--fw-light);
+  color: var(--text-secondary);
+  line-height: var(--lh-normal);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* =============================================================
+   5. CONTENT CONTAINERS & SURFACES
+   ============================================================= */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--gutter-fluid);
+  padding-right: var(--gutter-fluid);
+}
+
+.container-narrow {
+  width: 100%;
+  max-width: var(--container-narrow-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--gutter-fluid);
+  padding-right: var(--gutter-fluid);
+}
+
+.container-wide {
+  width: 100%;
+  max-width: var(--container-wide-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--gutter-fluid);
+  padding-right: var(--gutter-fluid);
+}
+
+/* Card Surfaces */
+.card-royal {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xs);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-card);
+  position: relative;
+  transition: 
+    transform var(--transition-normal),
+    box-shadow var(--transition-normal),
+    border-color var(--transition-normal);
+}
+
+.card-royal-interactive:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-elevated);
+  border-color: var(--color-gold);
+}
+
+/* Double border hairline for luxury certificates/invitations */
+.card-royal-ornate {
+  position: relative;
+  padding: calc(var(--space-8) + 4px);
+}
+
+.card-royal-ornate::before {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border: 1px solid var(--border-subtle);
+  pointer-events: none;
+  border-radius: var(--radius-xs);
+}
+
+/* Surface Variations */
+.surface-ivory {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.surface-sand {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.surface-maroon {
+  background-color: var(--bg-dark);
+  color: var(--text-inverse);
+}
+
+.surface-maroon h1,
+.surface-maroon h2,
+.surface-maroon h3,
+.surface-maroon h4 {
+  color: var(--color-ivory-light);
+}
+
+.surface-maroon .section-kicker {
+  color: var(--color-gold-light);
+}
+
+
+/* =============================================================
+   6. IMAGE CONTAINERS & FRAMES
+   ============================================================= */
+
+.img-frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--border-subtle);
+  background-color: var(--color-sand-light);
+  box-shadow: var(--shadow-subtle);
+}
+
+.img-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.img-frame:hover img {
+  transform: scale(1.03);
+}
+
+/* Inset Gold Filigree Border on image frame */
+.img-frame-ornate::after {
+  content: '';
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgba(245, 239, 228, 0.6);
+  pointer-events: none;
+  z-index: var(--z-surface);
+  transition: inset var(--transition-normal), border-color var(--transition-normal);
+}
+
+.img-frame-ornate:hover::after {
+  inset: 12px;
+  border-color: var(--color-gold-light);
+}
+
+/* Aspect Ratio Presets */
+.aspect-portrait {
+  aspect-ratio: 3 / 4;
+}
+
+.aspect-landscape {
+  aspect-ratio: 16 / 9;
+}
+
+.aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
+.aspect-editorial {
+  aspect-ratio: 4 / 5;
+}
+

@@ -1,0 +1,301 @@
+/**
+ * ROYAL HERITAGE — FOOTER SECTION STYLES
+ * Modern Indian Luxury Wedding Aesthetic
+ * 
+ * Deep Royal Maroon canvas with Antique Gold detailing,
+ * Antique Ivory typography, working section navigation,
+ * and accessible back-to-top control.
+ */
+
+.footer {
+  position: relative;
+  width: 100%;
+  background-color: var(--color-maroon);
+  color: var(--color-ivory);
+  padding: clamp(5rem, 8vw, 7rem) 0 clamp(3rem, 5vw, 4.5rem) 0;
+  overflow: hidden;
+  border-top: 1px solid var(--color-gold-border);
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+/* =============================================================
+   1. DECORATIVE TOP FLOURISH & IDENTITY
+   ============================================================= */
+
+.footer-flourish {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-gold-light);
+  margin-bottom: var(--space-4);
+  opacity: 0.85;
+}
+
+.footer-flourish-diamond {
+  font-size: 0.55rem;
+}
+
+.footer-flourish-motif {
+  font-size: 0.85rem;
+}
+
+/* Couple Names */
+.footer-couple-names {
+  font-family: var(--font-serif-heading);
+  font-size: clamp(2.5rem, 5.5vw, 4rem);
+  font-weight: var(--fw-regular);
+  color: var(--color-ivory-light);
+  line-height: var(--lh-tight);
+  letter-spacing: 0.03em;
+  margin: 0 0 var(--space-2) 0;
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.35em;
+  flex-wrap: wrap;
+}
+
+.footer-ampersand {
+  font-family: var(--font-serif-display);
+  font-style: italic;
+  font-size: 0.9em;
+  color: var(--color-gold-light);
+  font-weight: var(--fw-light);
+}
+
+/* Closing Message */
+.footer-closing-message {
+  font-family: var(--font-serif-display);
+  font-style: italic;
+  font-size: clamp(1.0625rem, 1.5vw, 1.28rem);
+  font-weight: var(--fw-regular);
+  color: var(--color-sand);
+  line-height: var(--lh-normal);
+  margin: 0 0 var(--space-4) 0;
+}
+
+/* Date & Location Metadata */
+.footer-meta-row {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  font-family: var(--font-sans-body);
+  font-size: var(--text-caption);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-gold-light);
+  margin-bottom: var(--space-3);
+}
+
+.footer-meta-dot {
+  color: var(--color-gold);
+  font-size: 0.85rem;
+}
+
+/* Gold Divider */
+.footer-divider {
+  margin: var(--space-5) auto var(--space-7);
+  max-width: 220px;
+}
+
+/* =============================================================
+   2. SECTION NAVIGATION
+   ============================================================= */
+
+.footer-nav {
+  width: 100%;
+  margin-bottom: var(--space-6);
+}
+
+.footer-nav-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-6);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.footer-nav-item {
+  display: inline-flex;
+  align-items: center;
+}
+
+.footer-nav-link {
+  position: relative;
+  display: inline-block;
+  padding: 0.375rem 0.25rem;
+  font-family: var(--font-sans-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-ivory);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.footer-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-gold-light);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--transition-normal);
+}
+
+.footer-nav-link:hover {
+  color: var(--color-gold-light);
+}
+
+.footer-nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.footer-nav-link:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-gold-light);
+  border-radius: var(--radius-xs);
+}
+
+/* =============================================================
+   3. BACK TO TOP CONTROL
+   ============================================================= */
+
+.footer-back-to-top-wrapper {
+  margin-bottom: var(--space-7);
+}
+
+.footer-back-to-top {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  background-color: transparent;
+  border: 1px solid rgba(205, 179, 130, 0.45);
+  border-radius: var(--radius-full);
+  padding: 0.5rem 1.35rem;
+  min-height: 44px;
+  color: var(--color-gold-light);
+  font-family: var(--font-sans-body);
+  font-size: var(--text-caption);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.footer-back-to-top-arrow {
+  font-size: 0.95rem;
+  line-height: 1;
+  transition: transform var(--transition-fast);
+}
+
+.footer-back-to-top:hover {
+  background-color: rgba(181, 150, 91, 0.16);
+  border-color: var(--color-gold-light);
+  color: var(--color-ivory-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+.footer-back-to-top:hover .footer-back-to-top-arrow {
+  transform: translateY(-2px);
+}
+
+.footer-back-to-top:active {
+  transform: translateY(0);
+}
+
+.footer-back-to-top:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--color-gold-glow);
+}
+
+/* =============================================================
+   4. DISCLAIMER & COPYRIGHT
+   ============================================================= */
+
+.footer-disclaimer-wrapper {
+  width: 100%;
+  max-width: 600px;
+  padding-top: var(--space-6);
+  border-top: 1px solid rgba(245, 239, 228, 0.12);
+  margin-bottom: var(--space-3);
+}
+
+.footer-disclaimer {
+  font-family: var(--font-sans-body);
+  font-size: 0.78rem;
+  font-weight: var(--fw-light);
+  color: rgba(245, 239, 228, 0.65);
+  line-height: var(--lh-normal);
+  font-style: italic;
+  margin: 0;
+}
+
+.footer-copyright {
+  font-family: var(--font-sans-body);
+  font-size: 0.72rem;
+  font-weight: var(--fw-regular);
+  letter-spacing: var(--tracking-wide);
+  color: rgba(245, 239, 228, 0.45);
+  margin: 0;
+}
+
+/* =============================================================
+   5. MOBILE RESPONSIVENESS
+   ============================================================= */
+
+@media (max-width: 640px) {
+  .footer-nav-list {
+    gap: var(--space-2) var(--space-4);
+  }
+
+  .footer-nav-link {
+    font-size: 0.8125rem;
+    padding: 0.5rem 0.25rem;
+  }
+
+  .footer-couple-names {
+    font-size: clamp(2.25rem, 8vw, 3rem);
+  }
+}
+
+/* =============================================================
+   6. REDUCED MOTION PREFERENCES
+   ============================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-nav-link::after,
+  .footer-back-to-top,
+  .footer-back-to-top-arrow {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+

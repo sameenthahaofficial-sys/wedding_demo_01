@@ -1,0 +1,350 @@
+/**
+ * ROYAL HERITAGE — EVENTS SECTION STYLES
+ * Modern Indian Luxury Wedding Editorial Layout
+ */
+
+.events {
+  position: relative;
+  width: 100%;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  padding: clamp(5rem, 9vw, 9rem) 0;
+  overflow: hidden;
+}
+
+.events-section-header {
+  margin-bottom: clamp(var(--space-12), 8vw, var(--space-20));
+}
+
+/* Events Stack */
+.events-list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(var(--space-16), 10vw, var(--space-24));
+}
+
+/* =============================================================
+   1. ALTERNATING EVENT ROW (DESKTOP)
+   ============================================================= */
+
+.event-row {
+  display: grid;
+  grid-template-areas:
+    "image"
+    "content";
+  gap: var(--space-8);
+  align-items: center;
+  position: relative;
+}
+
+@media (min-width: 960px) {
+  .event-row {
+    grid-template-columns: 48% 52%;
+    grid-template-areas: "image content";
+    gap: clamp(var(--space-10), 6vw, var(--space-16));
+  }
+
+  .event-row-reversed {
+    grid-template-columns: 52% 48%;
+    grid-template-areas: "content image";
+  }
+}
+
+/* =============================================================
+   2. EVENT PHOTOGRAPHY CONTAINER (4:5 RATIO)
+   ============================================================= */
+
+.event-image-wrapper {
+  grid-area: image;
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.event-image-container {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  border-radius: var(--radius-xs);
+  box-shadow: var(--shadow-card);
+  background-color: var(--color-sand);
+  aspect-ratio: 4 / 5;
+  overflow: visible;
+}
+
+/* Delicate Antique Gold Hairline Offset Accent */
+.event-image-accent {
+  position: absolute;
+  inset: -10px -10px 10px 10px;
+  border: 1px solid var(--border-medium);
+  pointer-events: none;
+  z-index: var(--z-deep);
+  border-radius: var(--radius-xs);
+  transition: inset var(--transition-normal), border-color var(--transition-normal);
+}
+
+.event-row-reversed .event-image-accent {
+  inset: -10px 10px 10px -10px;
+}
+
+.event-image-container:hover .event-image-accent {
+  inset: -14px -14px 14px 14px;
+  border-color: var(--color-gold);
+}
+
+.event-row-reversed .event-image-container:hover .event-image-accent {
+  inset: -14px 14px 14px -14px;
+  border-color: var(--color-gold);
+}
+
+/* Event Specific Subtle Accent Glow */
+.event-accent-mehendi {
+  border-color: rgba(118, 148, 122, 0.4);
+}
+
+.event-accent-sangeet {
+  border-color: rgba(181, 150, 91, 0.45);
+}
+
+.event-accent-wedding-ceremony {
+  border-color: rgba(181, 150, 91, 0.5);
+}
+
+.event-picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--border-subtle);
+}
+
+.event-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  opacity: 0;
+  transition: opacity var(--motion-duration-slow) var(--motion-ease-out), transform var(--transition-slow);
+}
+
+.event-image-loaded .event-img {
+  opacity: 1;
+}
+
+.event-image-container:hover .event-img {
+  transform: scale(1.02);
+}
+
+/* =============================================================
+   3. EVENT EDITORIAL CONTENT
+   ============================================================= */
+
+.event-content-wrapper {
+  grid-area: content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 580px;
+}
+
+/* Header Lockup */
+.event-header {
+  margin-bottom: var(--space-6);
+}
+
+.event-kicker-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-bottom: var(--space-2);
+}
+
+.event-number {
+  font-family: var(--font-sans-body);
+  font-size: var(--text-kicker);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-gold-dark);
+}
+
+/* Restrained Event-Specific Accent Badges */
+.event-theme-tag {
+  font-family: var(--font-sans-body);
+  font-size: 0.6875rem;
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+}
+
+.event-theme-mehendi {
+  color: #3b5943;
+  background-color: rgba(74, 107, 83, 0.1);
+  border: 1px solid rgba(74, 107, 83, 0.2);
+}
+
+.event-theme-sangeet {
+  color: var(--color-maroon);
+  background-color: rgba(100, 31, 48, 0.08);
+  border: 1px solid rgba(100, 31, 48, 0.2);
+}
+
+.event-theme-wedding-ceremony {
+  color: var(--color-gold-dark);
+  background-color: rgba(181, 150, 91, 0.12);
+  border: 1px solid rgba(181, 150, 91, 0.25);
+}
+
+/* Event Title — Cormorant Garamond */
+.event-title {
+  font-family: var(--font-serif-heading);
+  font-size: clamp(2.25rem, 4vw, 3.25rem);
+  font-weight: var(--fw-regular);
+  color: var(--color-maroon);
+  line-height: var(--lh-tight);
+  margin: 0 0 var(--space-3) 0;
+  letter-spacing: 0.01em;
+}
+
+.event-divider {
+  margin: var(--space-3) 0 var(--space-6);
+  max-width: 160px;
+  margin-left: 0;
+  justify-content: flex-start;
+}
+
+.event-divider::before {
+  flex: 0 0 20px;
+}
+
+/* =============================================================
+   4. METADATA SPECIFICATION LIST
+   ============================================================= */
+
+.event-metadata-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+  padding: var(--space-4) 0;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+@media (min-width: 560px) {
+  .event-metadata-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4) var(--space-6);
+  }
+}
+
+.event-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.event-meta-label {
+  font-family: var(--font-sans-body);
+  font-size: 0.6875rem;
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-charcoal-muted);
+}
+
+.event-meta-value {
+  font-family: var(--font-sans-body);
+  font-size: 0.9375rem;
+  font-weight: var(--fw-medium);
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.event-meta-bullet {
+  color: var(--color-gold);
+  margin: 0 2px;
+}
+
+.event-dress-code {
+  color: var(--color-maroon);
+  font-style: italic;
+  font-family: var(--font-serif-display);
+  font-weight: var(--fw-regular);
+  font-size: 1rem;
+}
+
+/* Event Narrative Prose */
+.event-description {
+  font-family: var(--font-sans-body);
+  font-size: clamp(1rem, 0.25vw + 0.95rem, 1.125rem);
+  font-weight: var(--fw-light);
+  line-height: var(--lh-relaxed);
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* =============================================================
+   5. MOBILE-FIRST RESPONSIVE COMPOSITION
+   ============================================================= */
+
+@media (max-width: 959px) {
+  .events {
+    padding: clamp(3.5rem, 7vw, 5rem) 0;
+  }
+
+  .events-section-header {
+    margin-bottom: var(--space-10);
+  }
+
+  .events-list {
+    gap: clamp(var(--space-12), 8vw, var(--space-16));
+  }
+
+  .event-row {
+    grid-template-areas:
+      "image"
+      "content";
+    gap: var(--space-8);
+  }
+
+  .event-image-container {
+    max-width: 380px;
+  }
+
+  .event-image-accent,
+  .event-row-reversed .event-image-accent {
+    inset: -8px -8px 8px 8px;
+  }
+
+  .event-content-wrapper {
+    max-width: 100%;
+  }
+
+  .event-title {
+    font-size: clamp(2rem, 6.5vw, 2.65rem);
+  }
+
+  .event-metadata-list {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+}
+
+/* =============================================================
+   6. REDUCED MOTION
+   ============================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .event-img,
+  .event-image-accent {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
